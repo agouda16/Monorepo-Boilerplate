@@ -1,0 +1,4 @@
+# .prettierignore
+src/config/env.ts
+node_modules
+dist

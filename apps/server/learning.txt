@@ -1,0 +1,4 @@
+1. to set-up typescript project. Install typescript globally 'npm i -g typescript' so that your machine identifies/complies typescript. However, the project will have typescript installed as a dev dependency 'npm i --save-dev typescript'.
+2. check the typescript version in CLI - 'tsc --version'
+3. to run typescript project you need a tsconfig.json file defining the typescript configuration for your project.
+3.1. 'tsc --init --sourceMap --rootDir src --outDir dist' will initialize project with rootDir being src and outDir (complied transpiled js files) being dist. sourceMap will map the complied js back to original ts files.

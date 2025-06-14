@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+RUN npm install --global ts-node nodemon
+
+# Copy rest of the app
+COPY . .
+
+# Ensure tsconfig is available
+COPY tsconfig.json ./
+
+# Expose the backend port (optional but helpful)
+EXPOSE 5001
+
+CMD ["nodemon", "--watch", "src", "--ext", "ts", "--exec", "ts-node", "src/index.ts"]
