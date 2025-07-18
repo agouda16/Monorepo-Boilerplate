@@ -25,6 +25,32 @@ services:
       - ${ENV_FILE}
     command: ${CLIENT_COMMAND}
 
+#TODO: work on this cache while studying Redis
+# cache:
+#   image: redis:7-alpine
+#   container_name: redis-cache
+#   ports:
+#     - "6379:6379"
+#   volumes:
+#     - redis-data:/data
+#   restart: unless-stopped
+
+#TODO: work on this database container while working on server-side
+# mongodb:
+#   image: mongo:7
+#   container_name: mongo-db
+#   restart: unless-stopped
+#   ports:
+#     - "27017:27017"
+#   volumes:
+#     - mongo-data:/data/db
+#   environment:
+#     MONGO_INITDB_DATABASE: mydatabase
+#     MONGO_INITDB_ROOT_USERNAME: root
+#     MONGO_INITDB_ROOT_PASSWORD: example
+
 volumes:
   server_node_modules:
   client_node_modules:
+  # redis-data:
+  # mongo-data:

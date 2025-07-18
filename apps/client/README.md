@@ -1,4 +1,33 @@
-# React + TypeScript + Vite
+# ⚛️ React + TypeScript + Vite + Tailwind CSS
+
+> Featuring **Feature-Sliced Design (FSD)** & Advanced ESLint Setup
+
+This project provides a **scalable, maintainable** front-end boilerplate using:
+
+- ⚡️ [Vite](https://vitejs.dev) — Fast development build tool
+- 🧠 [TypeScript](https://www.typescriptlang.org)
+- 💨 [Tailwind CSS](https://tailwindcss.com) — Utility-first styling
+- 🧱 **Feature-Sliced Design (FSD)** — Scalable frontend architecture
+- ✅ [ESLint](https://eslint.org) — With optional type-aware, React-specific rules
+
+---
+
+## 🧩 Feature-Sliced Architecture (FSD)
+
+We follow [Feature-Sliced Design](https://feature-sliced.design) to structure our app in a modular, domain-oriented way:
+
+src/
+├── app/ # App entry, router, context providers
+├── pages/ # Route-level views
+├── features/ # Business logic (e.g., auth, search)
+├── shared/ # Reusable UI, utilities, types
+└── index.css # Tailwind base styles
+
+This makes the app more **scalable**, **testable**, and **easy to migrate**.
+
+---
+
+## ⚙️ Vite + React Template
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -24,31 +53,31 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default tseslint.config({
   plugins: {
     // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
+    "react-x": reactX,
+    "react-dom": reactDom,
   },
   rules: {
     // other rules...
     // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
+    ...reactX.configs["recommended-typescript"].rules,
     ...reactDom.configs.recommended.rules,
   },
-})
+});
 ```
